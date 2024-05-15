@@ -1,43 +1,7 @@
-import {Component, ContentChild, Directive, Input, TemplateRef} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {LinkData} from "../../interfaces/link-data";
 import {RouterLink} from "@angular/router";
 import {NgIf, NgSwitch, NgSwitchCase, NgTemplateOutlet} from "@angular/common";
-
-@Directive({
-  standalone: true,
-  selector: '[textLink]'
-})
-export class TextLinkDirective {
-  constructor(public templateRef: TemplateRef<unknown>) {
-  }
-}
-
-@Directive({
-  standalone: true,
-  selector: '[buttonLink]'
-})
-export class ButtonLinkDirective {
-  constructor(public templateRef: TemplateRef<unknown>) {
-  }
-}
-
-@Directive({
-  standalone: true,
-  selector: '[buttonLinkLogoAfter]'
-})
-export class ButtonLinkLogoAfter {
-  constructor(public templateRef: TemplateRef<unknown>) {
-  }
-}
-
-@Directive({
-  standalone: true,
-  selector: '[buttonLinkLogoBefore]'
-})
-export class ButtonLinkLogoBefore {
-  constructor(public templateRef: TemplateRef<unknown>) {
-  }
-}
 
 @Component({
   selector: 'app-link',
@@ -45,10 +9,6 @@ export class ButtonLinkLogoBefore {
   imports: [
     RouterLink,
     NgIf,
-    TextLinkDirective,
-    ButtonLinkDirective,
-    ButtonLinkLogoAfter,
-    ButtonLinkLogoBefore,
     NgTemplateOutlet,
     NgSwitch,
     NgSwitchCase
@@ -62,7 +22,7 @@ export class LinkComponent {
 
   constructor() {
     console.log(this.linkData)
-    document.addEventListener('DOMContentLoaded', () =>{
+    document.addEventListener('DOMContentLoaded', () => {
       if (this.linkData.isButton) {
         if (this.linkData.logo) {
           if (this.linkData.logoPosition === 'after') {
@@ -78,13 +38,5 @@ export class LinkComponent {
       }
     })
   }
-
-  // logData() {
-  //   console.log(this.usedTemplate)
-  //   console.log(this.textLinkDirective)
-  //   console.log(this.buttonLinkDirective)
-  //   console.log(this.buttonLinkLogoAfter)
-  //   console.log(this.buttonLinkLogoBefore)
-  // }
 }
 

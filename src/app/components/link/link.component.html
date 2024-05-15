@@ -1,31 +1,39 @@
 <ng-container [ngSwitch]="linkType">
-  <div *ngSwitchCase="'textLink'">textLink</div>
-  <div *ngSwitchCase="'buttonLink'">buttonLink</div>
-  <div *ngSwitchCase="'buttonLinkLogoBefore'">buttonLinkLogoBefore</div>
-  <div *ngSwitchCase="'buttonLinkLogoAfter'">buttonLinkLogoAfter</div>
+  <ng-container *ngSwitchCase="'textLink'">
+    <ng-container *ngTemplateOutlet="textLink"></ng-container>
+  </ng-container>
+  <ng-container *ngSwitchCase="'buttonLink'">
+    <ng-container *ngTemplateOutlet="buttonLink"></ng-container>
+  </ng-container>
+  <ng-container *ngSwitchCase="'buttonLinkLogoBefore'">
+    <ng-container *ngTemplateOutlet="buttonLinkLogoBefore"></ng-container>
+  </ng-container>
+  <ng-container *ngSwitchCase="'buttonLinkLogoAfter'">
+    <ng-container *ngTemplateOutlet="buttonLinkLogoAfter"></ng-container>
+  </ng-container>
 </ng-container>
 
 
-<ng-template textLink>
+<ng-template #textLink>
   <a routerLink="{{linkData.routeLink}}" class="font-medium text-xl">{{ linkData.content }}</a>
 </ng-template>
 
-<ng-template buttonLink>
+<ng-template #buttonLink>
   <a routerLink="{{linkData.routeLink}}"
-     class="font-bold text-xl text-white px-8 py-3 bg-primary rounded-xl">{{ linkData.content }}</a>
+     class="btn-primary font-bold">{{ linkData.content }}</a>
 </ng-template>
 
-<ng-template buttonLinkLogoAfter>
+<ng-template #buttonLinkLogoAfter>
   <a routerLink="{{linkData.routeLink}}"
-     class="font-bold text-xl text-white px-8 py-3 bg-primary rounded-xl flex items-center gap-3">
+     class="btn-primary btn-logo font-bold">
     <span>{{ linkData.content }}</span>
     <span class="material-symbols-outlined">{{ linkData.logo }}</span>
   </a>
 </ng-template>
 
-<ng-template buttonLinkLogoBefore>
+<ng-template #buttonLinkLogoBefore>
   <a routerLink="{{linkData.routeLink}}"
-     class="font-bold text-xl text-white px-8 py-3 bg-primary rounded-xl flex items-center gap-3">
+     class="btn-primary btn-logo font-bold">
     <span class="material-symbols-outlined">{{ linkData.logo }}</span>
     <span>{{ linkData.content }}</span>
   </a>
