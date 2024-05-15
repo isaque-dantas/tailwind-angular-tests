@@ -1,16 +1,28 @@
 import {Component} from '@angular/core';
 import {NgForOf, NgOptimizedImage} from "@angular/common";
-import {LinkComponent} from "../link/link.component";
+import {
+    ButtonLinkDirective,
+    ButtonLinkLogoAfter,
+    ButtonLinkLogoBefore,
+    LinkComponent,
+    TextLinkDirective
+} from "../link/link.component";
 import {LinkData} from "../../interfaces/link-data";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    NgOptimizedImage,
-    LinkComponent,
-    NgForOf
-  ],
+    imports: [
+        NgOptimizedImage,
+        LinkComponent,
+        NgForOf,
+        ButtonLinkDirective,
+        ButtonLinkLogoAfter,
+        ButtonLinkLogoBefore,
+        RouterLink,
+        TextLinkDirective
+    ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

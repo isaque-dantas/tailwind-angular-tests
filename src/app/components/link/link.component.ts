@@ -58,12 +58,7 @@ export class ButtonLinkLogoBefore {
 })
 export class LinkComponent {
   @Input() linkData!: LinkData
-  usedTemplate!: TemplateRef<unknown>
-
-  @ContentChild(TextLinkDirective) textLinkDirective!: TextLinkDirective;
-  @ContentChild(ButtonLinkDirective) buttonLinkDirective!: ButtonLinkDirective;
-  @ContentChild(ButtonLinkLogoAfter) buttonLinkLogoAfter!: ButtonLinkLogoAfter;
-  @ContentChild(ButtonLinkLogoBefore) buttonLinkLogoBefore!: ButtonLinkLogoBefore;
+  linkType!: string
 
   constructor() {
     console.log(this.linkData)
@@ -71,25 +66,25 @@ export class LinkComponent {
       if (this.linkData.isButton) {
         if (this.linkData.logo) {
           if (this.linkData.logoPosition === 'after') {
-            this.usedTemplate = this.buttonLinkLogoAfter.templateRef
+            this.linkType = 'buttonLinkLogoAfter'
           } else if (this.linkData.logoPosition === 'before') {
-            this.usedTemplate = this.buttonLinkLogoBefore.templateRef
+            this.linkType = 'buttonLinkLogoBefore'
           }
         } else {
-          this.usedTemplate = this.buttonLinkDirective.templateRef
+          this.linkType = 'buttonLink'
         }
       } else {
-        this.usedTemplate = this.textLinkDirective.templateRef
+        this.linkType = 'textLink'
       }
     })
   }
 
-  logData() {
-    console.log(this.usedTemplate)
-    console.log(this.textLinkDirective)
-    console.log(this.buttonLinkDirective)
-    console.log(this.buttonLinkLogoAfter)
-    console.log(this.buttonLinkLogoBefore)
-  }
+  // logData() {
+  //   console.log(this.usedTemplate)
+  //   console.log(this.textLinkDirective)
+  //   console.log(this.buttonLinkDirective)
+  //   console.log(this.buttonLinkLogoAfter)
+  //   console.log(this.buttonLinkLogoBefore)
+  // }
 }
 

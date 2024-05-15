@@ -1,4 +1,9 @@
-<ng-container [ngTemplateOutlet]="usedTemplate"></ng-container>
+<ng-container [ngSwitch]="linkType">
+  <div *ngSwitchCase="'textLink'">textLink</div>
+  <div *ngSwitchCase="'buttonLink'">buttonLink</div>
+  <div *ngSwitchCase="'buttonLinkLogoBefore'">buttonLinkLogoBefore</div>
+  <div *ngSwitchCase="'buttonLinkLogoAfter'">buttonLinkLogoAfter</div>
+</ng-container>
 
 
 <ng-template textLink>
