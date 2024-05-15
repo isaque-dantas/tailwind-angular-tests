@@ -1,0 +1,14 @@
+<header class="bg-gray-50 shadow-md ">
+  <div class="container mx-auto py-4">
+    <div class="flex justify-between items-center">
+      <figure><img ngSrc="../../../assets/img/logo-com-nome.png" alt="" height="55" width="170" priority></figure>
+      <nav>
+        <ul class="flex gap-8">
+          <li *ngFor="let linkData of linksDatas">
+            <app-link [linkData]="linkData"></app-link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

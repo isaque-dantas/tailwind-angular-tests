@@ -1,0 +1,27 @@
+<ng-container [ngTemplateOutlet]="usedTemplate"></ng-container>
+
+
+<ng-template textLink>
+  <a routerLink="{{linkData.routeLink}}" class="font-medium text-xl">{{ linkData.content }}</a>
+</ng-template>
+
+<ng-template buttonLink>
+  <a routerLink="{{linkData.routeLink}}"
+     class="font-bold text-xl text-white px-8 py-3 bg-primary rounded-xl">{{ linkData.content }}</a>
+</ng-template>
+
+<ng-template buttonLinkLogoAfter>
+  <a routerLink="{{linkData.routeLink}}"
+     class="font-bold text-xl text-white px-8 py-3 bg-primary rounded-xl flex items-center gap-3">
+    <span>{{ linkData.content }}</span>
+    <span class="material-symbols-outlined">{{ linkData.logo }}</span>
+  </a>
+</ng-template>
+
+<ng-template buttonLinkLogoBefore>
+  <a routerLink="{{linkData.routeLink}}"
+     class="font-bold text-xl text-white px-8 py-3 bg-primary rounded-xl flex items-center gap-3">
+    <span class="material-symbols-outlined">{{ linkData.logo }}</span>
+    <span>{{ linkData.content }}</span>
+  </a>
+</ng-template>
