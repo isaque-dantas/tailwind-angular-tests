@@ -1,11 +1,7 @@
 import {Component} from '@angular/core';
 import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {
-    ButtonLinkDirective,
-    ButtonLinkLogoAfter,
-    ButtonLinkLogoBefore,
-    LinkComponent,
-    TextLinkDirective
+    LinkComponent
 } from "../link/link.component";
 import {LinkData} from "../../interfaces/link-data";
 import {RouterLink} from "@angular/router";
@@ -17,11 +13,7 @@ import {RouterLink} from "@angular/router";
         NgOptimizedImage,
         LinkComponent,
         NgForOf,
-        ButtonLinkDirective,
-        ButtonLinkLogoAfter,
-        ButtonLinkLogoBefore,
         RouterLink,
-        TextLinkDirective
     ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
