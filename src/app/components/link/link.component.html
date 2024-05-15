@@ -1,16 +1,21 @@
 <ng-container [ngSwitch]="linkType">
+
   <ng-container *ngSwitchCase="'textLink'">
     <ng-container *ngTemplateOutlet="textLink"></ng-container>
   </ng-container>
+
   <ng-container *ngSwitchCase="'buttonLink'">
     <ng-container *ngTemplateOutlet="buttonLink"></ng-container>
   </ng-container>
+
   <ng-container *ngSwitchCase="'buttonLinkLogoBefore'">
     <ng-container *ngTemplateOutlet="buttonLinkLogoBefore"></ng-container>
   </ng-container>
+
   <ng-container *ngSwitchCase="'buttonLinkLogoAfter'">
     <ng-container *ngTemplateOutlet="buttonLinkLogoAfter"></ng-container>
   </ng-container>
+
 </ng-container>
 
 
