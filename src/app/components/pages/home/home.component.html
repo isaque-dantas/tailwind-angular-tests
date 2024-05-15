@@ -6,16 +6,9 @@
         <p class="text-xl">Envie <strong class="text-primary font-medium">Timegrams</strong>
           para seus amigos lerem somente quando você quiser.
         </p>
-        <!--        <a routerLink="/cadastro" class="btn-primary btn-logo font-medium"><span>Fazer cadastro</span><span class="material-symbols-outlined">chevron_right</span></a>-->
         <app-link
-          [linkData]="
-          {
-            content: 'Fazer cadastro',
-            routeLink: '/cadastro',
-            isButton: true,
-            logo: 'chevron_right',
-            logoPosition: 'after'
-          }">
+          [linkData]=" {content: 'Fazer cadastro', routeLink: '/cadastro', isButton: true, logo: 'chevron_right',
+          logoPosition: 'after'}">
         </app-link>
       </div>
       <div class="col-span-3">

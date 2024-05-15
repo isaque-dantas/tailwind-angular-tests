@@ -23,20 +23,14 @@ export class LinkComponent {
   constructor() {
     console.log(this.linkData)
     document.addEventListener('DOMContentLoaded', () => {
-      if (this.linkData.isButton) {
-        if (this.linkData.logo) {
-          if (this.linkData.logoPosition === 'after') {
-            this.linkType = 'buttonLinkLogoAfter'
-          } else if (this.linkData.logoPosition === 'before') {
-            this.linkType = 'buttonLinkLogoBefore'
-          }
-        } else {
-          this.linkType = 'buttonLink'
-        }
+      if (this.linkData.logo && this.linkData.logoPosition) {
+        this.linkType = {
+          'after': 'buttonLinkLogoAfter',
+          'before': 'buttonLinkLogoBefore',
+        }[this.linkData.logoPosition]!
       } else {
-        this.linkType = 'textLink'
+        this.linkType = this.linkData.isButton ? 'buttonLink' : 'textLink'
       }
     })
   }
 }
-
